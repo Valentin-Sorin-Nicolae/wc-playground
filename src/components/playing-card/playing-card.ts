@@ -8,19 +8,18 @@ export class PlayingCard extends LitElement {
   @property()
   backFace?: string;
 
-  render() {
-    const style = css`
+  static styles = css`
         /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-        .playng-card {
+        .playing-card {
         background-color: transparent;
         width: 402px;
         height: 571px;
         border: 1px solid #f1f1f1;
-        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+        perspective: 3000px; /* Remove this if you don't want the 3D effect */
         }
 
         /* This container is needed to position the front and back side */
-        .playng-card__inner {
+        .playing-card__inner {
         position: relative;
         width: 100%;
         height: 100%;
@@ -36,6 +35,10 @@ export class PlayingCard extends LitElement {
 
         /* Position the front and back side */
         .playing-card__face--front, .playing-card__face--back {
+          & img{
+            width: 100%;
+            height: 100%;
+          }
         position: absolute;
         width: 100%;
         height: 100%;
@@ -44,7 +47,7 @@ export class PlayingCard extends LitElement {
         }
 
         /* Style the front side (fallback if image is missing) */
-        .playing-card__face--front {
+        .playing-card__fac--front {
         background-color: #bbb;
         color: black;
         }
@@ -55,20 +58,22 @@ export class PlayingCard extends LitElement {
         color: white;
         transform: rotateY(180deg);
     `;
+
+  render() {
     return html`
       <div class="playing-card">
-        <div class="playing_card__inner">
-          <div class="playing-card__face--fornt">
+        <div class="playing-card__inner">
+          <div class="playing-card__face--front">
             <img
               src=${this.frontFace ||
-              "https://opengameart.org/sites/default/files/oga-textures/92832/joker.png"}
+              "https://opengameart.org/sites/default/files/oga-textures/92832/cardbackfacewhitebluesmallpattern.png"}
               alt="card front"
             />
           </div>
           <div class="playing-card__face--back">
             <img
               src=${this.backFace ||
-              "https://opengameart.org/sites/default/files/oga-textures/92832/cardbackfacewhitebluesmallpattern.png"}
+              "https://opengameart.org/sites/default/files/oga-textures/92832/joker.png"}
               alt="card back"
             />
           </div>
