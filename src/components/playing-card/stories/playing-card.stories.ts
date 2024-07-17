@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 import  '../../../../out-tsc/src/components/playing-card/playing-card';
 
 const meta = {
-  title: 'Marcelo/Playing-card',
+  title: 'Marcelo/Playing Card',
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   render: "",
