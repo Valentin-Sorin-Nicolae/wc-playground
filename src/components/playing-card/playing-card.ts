@@ -48,14 +48,11 @@ export class PlayingCard extends LitElement {
 
         /* Style the front side (fallback if image is missing) */
         .playing-card__fac--front {
-        background-color: #bbb;
         color: black;
         }
 
         /* Style the back side */
         .playing-card__face--back {
-        background-color: dodgerblue;
-        color: white;
         transform: rotateY(180deg);
     `;
 
